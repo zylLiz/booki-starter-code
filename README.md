@@ -3,12 +3,13 @@
 
 # Booki
 
-Ce projet est une reproduction de la page d’accueil Booki en HTML et CSS.
+Projet réalisé dans le cadre de la formation OpenClassrooms.
 
-## Fonctionnalités
-- Recherche d’hébergements
-- Filtres dynamiques
-- Responsive design
+## Objectifs actuels
+
+- **Finaliser la structure HTML** afin qu’elle soit conforme à la maquette fournie.
+- **Intégrer le CSS** dans un premier temps pour la navigation (`nav`) et le header, comme demandé par mon mentor.
 
 ## Auteur
-zylLiz 
+
+zylLiz
