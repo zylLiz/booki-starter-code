@@ -17,6 +17,9 @@
 body {
   color: #000;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .main-container {
@@ -36,14 +39,24 @@ a {
     font-size: 22px;
 }
 
+/*****Cards (code fournie + ajout de styles)*****/
 .card {
     background-color: white;
     border-radius: 20px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    cursor: pointer;
+    opacity: 0.8;
 }
 
-.card img {
+.card:hover {
+    transform: scale(1.03); 
+    opacity: 1; /* Ajoute un effet de zoom au survol */
+    transition: transform 0.5s; /*change le pointeur*/
+}
+
+.card img 
+.cards img{
     object-fit: cover;
 }
 
@@ -225,7 +238,6 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
-  /*background: #D9D9D9;*/
   border: 2px solid var(--grey);
   border-radius: 25px;
   padding: 10px 18px;
@@ -248,8 +260,14 @@ header {
 
 
 /* MAIN LAYOUT */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 colonnes */
+  gap: 40px; /* espace entre les cartes */
+}
 .hebergements-and-populaires {
   display: flex;
+  justify-content: space-between;;
   gap: 40px;
   max-width: 1440px;
   margin: 0 auto;
@@ -258,21 +276,17 @@ header {
 
 
 /****** Hebergements And Populaires ***********/
-.hebergements-and-populaires {
-    display: flex;
-    justify-content: space-between;
-}
 
-.hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
+.hebergements-and-populaires section {   
+    background-color: var(--main-bg-color);  /* Applique la couleur de fond de la section */
+    border-radius: 20px; /* Arrondit les coins */
+    padding: 30px;    /* Ajoute de l'espace à l'intérieur de la section */
+    box-sizing: border-box;   /* Inclut le padding dans la largeur/hauteur de l'élément */
 }
 
 /****** Hebergements ***********/
 .hebergements {
-    width: 32%;
+    width: 65%;
 }
 
 .hebergements-title {
@@ -281,11 +295,11 @@ header {
     align-items: center;
 }
 
-.hebergements-cards .card {
+.hebergement-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-    grid-template-rows: repeat(2, 1fr);    /* 2 lignes */
     gap: 30px; /* espace entre les cartes */
+    margin-top: 30px;
 }
 
 
@@ -295,6 +309,24 @@ header {
     border-radius: 20px 20px 0px 0px;
     object-fit: cover; /*l'image remplit le conteneur */
 }
+
+.afficher-plus {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.afficher-plus a {
+    color: #000;
+    text-decoration: none;
+}
+
+.afficher-plus a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
 
 /****** Populaires ***********/
 .populaires {
@@ -339,6 +371,131 @@ header {
 
 .populaires-cards .card-rating {
     margin-bottom: 5px;
+}
+
+/*Section Activités à Marseille*/
+
+.activites {
+  padding: 30px 15px;
+  margin: 0 auto;
+  max-width: 1440px;
+  /*box-sizing: border-box;*/
+}
+
+.activites-title {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.activites-cards-grid {
+  display: grid;
+  /* Grille avec 3 colonnes*/
+  grid-template-columns: repeat(4, 1fr);
+  /* 2 lignes avec hauteurs spécifiques */
+  grid-template-rows: 380px;
+  gap: 20px;
+}
+
+.activites-cards-grid .card {
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Essentiel pour que les éléments internes respectent le border-radius de la carte */
+  /*transition: transform 0.3s ease;*/
+  display: flex; /* flexbox pour empiler l'image et le titre */
+  flex-direction: column;
+  height: 100%; /* Assure que la carte prend toute la hauteur de la grille */
+}
+
+.activites-cards-grid .card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.activites-cards-grid .card img {
+   width: 100%; /* Assure que l'image prend toute la largeur de la carte */
+   object-fit: cover;
+   display: block;
+   border-radius: 20px 20px 0 0;
+   flex: 1; /* Permet à l'image de prendre l'espace disponible */
+   height: 220px; /* Hauteur fixe pour uniformiser les cartes */
+}
+
+.activites-cards-grid .card-title {
+  background-color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold; 
+  border-radius: 0 0 20px 20px;
+  margin: 0;
+   /* Hauteur fixe pour uniformiser */
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+/* Positionnement spécifique des cartes selon la maquette */
+#activity-1 {
+  /* Vieux-Port : 1ere colonne */
+  grid-column: 1;
+  grid-row: 1;
+  padding: 0; /* Enlève le padding pour coller à la grille */
+}
+
+#activity-2 {
+  /*Fort de Pomègues : la 2eme colonne*/
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0;
+}
+
+#activity-3 {
+    /*Parc national des Calanques : 3eme colonne*/
+    grid-column: 3;
+    grid-row: 1;
+    padding: 0;
+}
+
+#activity-4 {
+    /*Notre Dame de la Garde : 4eme colonne*/
+    grid-column: 4;
+    grid-row: 1;
+    padding: 0;
+}
+
+/*****FOOTER******/
+
+footer {
+    padding: 40px 0 20px 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1440px;  /* même largeur que le contenu principal */        
+    margin: 0 auto; /* Centre le footer */
+    display:flex;
+    justify-content: space-between; /* Espace entre les colonnes */    
+    gap:40px;
+    padding: 0 20px;
+    background-color: #f2f2f2;
+}
+
+.footer-container > div {
+    min-width: 200px; /* Largeur minimale pour les colonnes */   
+}
+
+.footer-container h4 {    
+    margin-bottom: 10px;
+    font-size: 1.1rem; /* Taille de police pour les titres */    
+}
+
+.footer-container ul {
+    list-style: none; /* Enlève les puces */;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-container ul li {
+    margin-bottom: 8px; /* Espace entre les éléments de la liste */
 }
 
 

@@ -60,8 +60,8 @@
     </header>
 
         <!-- MAIN : Section principale avec hébergements et populaires -->
-    <main>    
-        <div class="hebergements-and-populaires">
+        <main>    
+            <div class="hebergements-and-populaires">
 
          <!-- Hébergements -->    
                 <section class="hebergements">
@@ -184,7 +184,11 @@
                                 </div>
                             </article>
                         </a>
-                    </div>    
+                    </div> 
+                    
+                    <p class="afficher-plus">
+                        <a href="#">Afficher plus</a>                       
+                    </p>
                 </section>
 
                 <!-- Populaires -->
@@ -253,82 +257,66 @@
                         </a>
                     </div>
                 </section>
-        </div>
-    </main>        
+            </div> 
+            
                 <section class="activites">
                     <div class="activites-title">
                         <h2 class="section-title">Activités à Marseille</h2>    
                     </div>
-                    <div class="activites-cards">
-                        <a href="#">
-                            <article class="card">
-                                <img src="./images/activites/reno-laithienne.jpg" alt="Image d'un port de plaisance">
-                                <div class="card-content">
-                                    <div class="card-txt">
-                                        <h3 class="card-title">Vieux-Port</h3>
-                                    </div>
-                                </div>
-                            </article>
-                        </a>
-                                       
-                            <article class="card">
-                                <img src="./images/activites/paul-hermann.jpg" alt="Image du fort de Pomègues">
-                                <div class="card-content">
-                                    <div class="card-txt">
-                                        <h3 class="card-title">Fort de Pomègues</h3>
-                                    </div>
-                                </div>
-                            </article>
-                                 
-                            <article class="card">
-                                <img src="./images/activites/kilyan-sockalingum.jpg" alt="Image des calanques de Marseille">
-                                <div class="card-content">
-                                    <div class="card-txt">
-                                        <h3 class="card-title">Parc national des calanques</h3>
-                                    </div>
-                                </div>
-                            </article>
-                                
-                            <article class="card">
-                                <img src="./images/activites/florian-wehde.jpg" alt="Image de Notre Dame de la Garde">
-                                <div class="card-content">
-                                    <div class="card-txt">
-                                        <h3 class="card-title">Notre-Dame-de-la-Garde</h3>
-                                    </div>
-                                </div>
-                            </article>
-                    </div>                             
+
+                    <div class="activites-cards-grid">                                                
+                        <article id="activity-1" class="card">
+                            <img src="./images/activites/reno-laithienne.jpg" alt="Image d'un port de plaisance">
+                            <h3 class="card-title">Vieux-Port</h3>
+                        </article>
+                         
+
+                        <article id="activity-2" class="card">
+                            <img src="./images/activites/paul-hermann.jpg" alt="Image du fort de Pomègues">
+                            <h3 class="card-title">Fort de Pomègues</h3>
+                        </article>
+                        
+                        <article id="activity-3" class="card">
+                            <img src="./images/activites/kilyan-sockalingum.jpg" alt="Image des calanques de Marseille">
+                            <h3 class="card-title">Parc national des calanques</h3>
+                        </article>
+                        
+                        <article id="activity-4" class="card">
+                            <img src="./images/activites/florian-wehde.jpg" alt="Image de Notre Dame de la Garde">
+                            <h3 class="card-title">Notre-Dame-de-la-Garde</h3>
+                        </article>
+                    </div>
                 </section>
+        </main>             
             
         <!--création footer-->
             <footer>
                 <div class="footer-container">
-                    <div class="footer-column">
-                        <h4>À propos</h4>
+                    <div>
+                        <h4>À propos</h4>                        
+                        <ul>
+                            <li>Fonctionnement du site</li>
+                            <li>Conditions générales</li>
+                            <li>Données et confidentialité</li>
+                        </ul>
                     </div>
 
-                    <ul>
-                        <li><a href=#>Fonctionnement du site</a></li>
-                        <li><a href="#">Conditions générales</a></li>
-                        <li><a href="#">Données et confidentialité</a></li>
-                    </ul>
-                    
-                    <div class="footer-column">
-                        <h4>Nos hébergements</h4>
-                    </div>    
-                    <ul>
-                        <li><a href="#">Charte qualité</a></li>
-                        <li><a href="#">Proposer votre hôtel</a></li>
-                    </ul>
-                
-                    <div class="footer-column">
-                        <h4>Assistance</h4>
+                    <div>
+                        <h4>Nos hébergements</h4>                           
+                        <ul>
+                            <li>Charte qualité</li>
+                            <li>Proposer votre hôtel</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li><a href="#">Centre d’aide</a></li>
-                        <li><a href="#">Nous contacter</a></li>
-                    </ul>
-                </div>     
+                    
+                    <div>
+                        <h4>Assistance</h4>                        
+                        <ul>
+                            <li>Centre d’aide</li>
+                            <li>Nous contacter</li>
+                        </ul>
+                    </div>    
+                </div> 
             </footer>
     </body>
 </html>
