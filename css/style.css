@@ -1,4 +1,7 @@
-/****** General ***********/
+/* ========================================
+   VARIABLES CSS & RESET
+   ======================================== */
+
 * {    
     font-family: 'Raleway', sans-serif;    
 }
@@ -7,7 +10,7 @@
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
-    --grey: #D9D9D9; /* Couleur grise pour les boutons de filtre */
+    --grey: #D9D9D9;
 }
 
 .fa-solid {
@@ -15,17 +18,10 @@
 }
 
 body {
-  color: #000;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
+    color: #000;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -39,31 +35,30 @@ a {
     font-size: 22px;
 }
 
-/*****Cards (code fournie + ajout de styles)*****/
+/* ========================================
+   COMPOSANTS GÉNÉRIQUES - CARTES
+   ======================================== */
+
 .card {
     background-color: white;
     border-radius: 20px;
-    /*padding: 5px;*/
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
     cursor: pointer;
     opacity: 0.8;
-    transition: transform 0.5s, box-shadow 0.5s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 5px; /* Ajout du padding pour créer la séparation des images */
 }
 
 .card:hover {
-    transform: scale(1.03); 
-    opacity: 1; /* Ajoute un effet de zoom au survol */
-    transition: transform 0.5s; /*change le pointeur*/
-    box-shadow: 0px 4px 20px 0 #b0b0b0; /* Ajoute une ombre plus marquée au survol */
+    transform: scale(1.02);
+    opacity: 1;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
     width: 100%;
-    aspect-ratio: 4/3; /* ou adapte selon la maquette */
     height: auto;
-    max-height: 110px; /* ajuste selon la maquette */
     object-fit: cover;
-    border-radius: 20px 20px 0 0;
     display: block;
 }
 
@@ -79,12 +74,6 @@ a {
     margin-bottom: 10px;
 }
 
-
-/*.card img, 
-.cards img {
-    object-fit: cover;
-}*/
-
 .card-title {
     font-size: 1.1rem;
     font-weight: 700;
@@ -98,24 +87,23 @@ a {
 
 .card-rating {
     margin-top: auto;
-    color: #0065FC;
+    color: var(--main-color);
     display: flex;
-    gap: 2px;
+    gap: 2px;  
 }
 
 .card-rating .neutral-star {
-    color: #F2F2F2;
+    color: var(--main-bg-color);
 }
 
 .euro {
     font-weight: 700;
 }
 
-.neutral-star {
-    color: var(--main-bg-color)
-}
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
 
-/****** Header & Navbar ***********/
 header {
     max-width: 1440px;
     margin: auto;
@@ -130,7 +118,6 @@ header {
     height: 79px;   
 }
 
-
 .logo img {
     height: 25px;
     width: auto;
@@ -141,203 +128,188 @@ header {
     display: flex;
     gap: 40px;
     list-style: none;
-    
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
     display: inline-block;
     padding-top: 16px;
     border-top: 2px solid transparent;
-    color: #000; /*couleur par défaut noire */
+    color: #000;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s, border-top-color 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active, /* Ajout pour le lien actif */
-.nav-links a[aria-current="page"] {
+.nav-links a:hover {
     border-top: 2px solid var(--main-color);
     color: var(--main-color);
 }
 
-/* HEADER CONTENT */
+/* ========================================
+   CONTENU HEADER
+   ======================================== */
+
 .header-content {
-  margin: 30px 0 20px 0;
-  margin-bottom: 40px;;
+    margin: 30px 0 40px 0;
 }
 
 .header-content h1 {
-  margin-bottom: 0; 
-  font-size: 1.5rem;
-  font-weight: 700;
+    margin-bottom: 8px; 
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .header-content p {
-  margin-top: 0px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-/* SEARCH FORM */
+/* ========================================
+   FORMULAIRE DE RECHERCHE
+   ======================================== */
+
 .search-form {
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
-  background: #fff;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 4px;
-  width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    width: fit-content;
 }
 
 .search-form i {
-  color: #000;
-  font-size: 1.2em;
-  margin: 0 8px;
-  background: #f2f2f2;
-  border-radius: 30% 0 0 30%;
-  padding: 12px 14px;
-  margin-right: 0;
-  margin-left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center; 
+    color: #000;
+    font-size: 1.2em;
+    background: var(--main-bg-color);
+    border-radius: 15px 0 0 15px;
+    padding: 15px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
 
 .search-form input {
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #000;
-  border: 1px solid #f2f2f2;
-  padding: 10px 12px;
-  background: #fff;
+    border: 1px solid var(--main-bg-color);
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    padding: 15px 16px;
+    background: #fff;
+    min-width: 200px;
 }
 
 .search-form input::placeholder {
-  color: #000;
-  font-weight: 700;
-  opacity: 1; /* Assure que le placeholder est opaque */
+    color: #000;
+    font-weight: 700;
+    opacity: 1;
 }
 
 .search-form button {
-  background: var(--main-color);
-  color: #fff;
-  border: none;
-  border-radius: 0 10px 10px 0;
-  padding: 12px 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s;
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    padding: 15px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .search-form button:hover {
-  background: #0051c6;
+    background: #0051c6;
 }
 
-/* FILTERS */
+/* ========================================
+   FILTRES
+   ======================================== */
+
 .filters {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  border: none;
-  outline: none;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 37px;
+    flex-wrap: wrap;
+}
+
+.filters h2 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid var(--grey);
+    border-radius: 25px;
+    padding: 13px 19px;
+    background: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.filter-buttons button:hover {
+    background: var(--filter-bg-color);
 }
 
 .filters-info {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.95rem;
-  /*margin-bottom: 24px;*/
-  padding-block: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    margin-bottom: 37px;
 }
 
-/* Ajoute un cercle autour du "i" */
-.filters-info > .circle-info {
+.circle-info {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 24px;
     height: 24px;
-    border-radius: 50%; /* Pour faire un Cercle parfait */
-    border: 2px solid #f2f2f2; /* Bordure grise */;
-    background: transparent; /*Pas de fond pour le cercle */
+    border-radius: 50%;
+    border: 1px solid var(--grey);
+    background: transparent;
+    font-size: 0.75rem;
     font-weight: bold;
-    font-size: 0.8em; /* Taille de police pour le "i" */;
 }
 
-.filters h2 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1;
-  padding: 0;
-}
-
-.filter-buttons {
-  display: flex;
-  gap: 16px;
-  font-weight: 700;
-}
-
-.filter-buttons button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 2px solid var(--grey);
-  border-radius: 25px;
-  padding: 10px 18px;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: border 0.2s, background 0.2s;
-  border-radius: 25px; /* Ajout de border-radius pour arrondir les boutons */
-  color:#000;
-  white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
-  min-width: 120px; /* Largeur minimale pour les boutons */
-  background-color: #fff; /* Couleur de fond blanche pour les boutons */
-}
-
-.filter-buttons button:hover,
-.filter-buttons button:focus {
-  background: var(--filter-bg-color);
-}
-
-
-
-/* MAIN LAYOUT */
-.main {
- /* display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 3 colonnes */
- /* gap: 40px; /* espace entre les cartes */
- width: 98%;
- max-width: 1440px;
- margin: auto;
-}
-
-
-/****** Hebergements And Populaires ***********/
+/* ========================================
+   LAYOUT PRINCIPAL
+   ======================================== */
 
 .hebergements-and-populaires {
-  display: flex;
-  justify-content: space-between;;
-  gap: 40px;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
 }
 
 .hebergements-and-populaires section {   
-    background-color: var(--main-bg-color);  /* Applique la couleur de fond de la section */
-    border-radius: 20px; /* Arrondit les coins */
-    padding: 30px;    /* Ajoute de l'espace à l'intérieur de la section */
-    box-sizing: border-box;   /* Inclut le padding dans la largeur/hauteur de l'élément */
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
-/****** Hebergements ***********/
+/* ========================================
+   SECTION HÉBERGEMENTS
+   ======================================== */
 
 .hebergements {
     width: 65%;
@@ -347,44 +319,50 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .hebergement-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-    gap: 30px; /* espace entre les cartes */
-    margin-top: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
+.hebergements .card {
+    display: flex;
+    flex-direction: column;
+    height: 207px;
+    padding: 5px; /* Séparation spécifique aux cartes d'hébergement */
+}
 
-.hebergements img {
-    width: 100%;
-    height: 136px;
-    border-radius: 20px 20px 0px 0px;
-    object-fit: cover; /*l'image remplit le conteneur */
+.hebergements .card img {
+    height: 124px;
+    border-radius: 15px 15px 0 0; /* Ajustement du border-radius pour tenir compte du padding */
+}
+
+ .hebergements .card-content {
+    padding: 11px; /* Ajustement du padding pour compenser le padding de la carte */   
 }
 
 .afficher-plus {
-    margin-top: 30px;
-    margin-bottom: 0;
-    font-size: 18px;
-    font-weight: bold;
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
 }
 
 .afficher-plus a {
     color: #000;
-    text-decoration: none;
 }
 
 .afficher-plus a:hover {
     color: var(--main-color);
-    text-decoration: underline;
 }
 
+/* ========================================
+   SECTION POPULAIRES
+   ======================================== */
 
-
-
-/****** Populaires ***********/
 .populaires {
     width: 32%;
 }
@@ -393,272 +371,266 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
+}
+
+.populaires-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .populaires-cards .card {
     display: flex;
-    margin-top: 33px;
+    height: 144px;
+    padding: 5px; /* Séparation pour les cartes populaires */
 }
 
 .populaires-cards img {
     width: 33%;
-    height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    height: 100%;
+    border-radius: 15px 0 0 15px; /* Ajustement du border-radius */
 }
 
 .populaires-cards .card-content {
     width: 67%;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
+    padding: 11px 10px 11px 10px; /* Ajustement du padding */
 }
 
 .populaires-cards .card-title {
-    margin-top: 10px;
     margin-bottom: 4px;
 }
 
 .populaires-cards .card-subtitle {
-    margin: 0;
+    margin-bottom: 8px;
 }
 
-.populaires-cards .card-rating {
-    margin-bottom: 5px;
-}
-
-/*Section Activités à Marseille*/
+/* ========================================
+   SECTION ACTIVITÉS
+   ======================================== */
 
 .activites {
-  padding: 30px 15px;
-  margin: 0 auto;
-  max-width: 1440px;
-  box-sizing: border-box;
+    padding: 60px 50px 60px 50px;
+    margin: 0 auto;
+    max-width: 1350px;
 }
 
 .activites-title {
-  margin-bottom: 20px;
-  text-align: left;
+    margin-bottom: 30px;
 }
 
-/* Grille responsive, 4 colonnes sur desktop, s'adapte sur mobile */
 .activites-cards-grid {
-  display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
-/* Carte activité : hauteur fixe, effet allongé */
 .activites-cards-grid .card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease; /* Ajuste ici pour l'effet allongé selon la maquette */
-  background: #fff;
-  height: 420px; /* Hauteur fixe pour l'effet allongé */
+    display: flex;
+    flex-direction: column;
+    height: 439px;
+    padding: 0;
 }
 
-.activites-cards-grid .card:hover {
-  transform: scale(1.03);
-}
-
-/* Image étirée verticalement (allongée) */
 .activites-cards-grid .card img {
-  width: 100%;
-  height: 320px; 
-  object-fit: cover; /* Garde le ratio, rogne si besoin, pas de déformation */
-  border-radius: 20px 20px 0 0;
-  display: block;
+    height: 380px;
+    border-radius: 20px 20px 0 0;
 }
 
-/* Titre de la carte */
 .activites-cards-grid .card-title {
-  background-color: white;
-  padding: 20px;
-  font-size: 1rem;
-  font-weight: bold; 
-  border-radius: 0 0 20px 20px;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  height: 100px; /* Le reste du bloc */
-  box-sizing: border-box;
+    padding: 20px;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    height: 59px;
+    box-sizing: border-box;
 }
 
-/* Positionnement spécifique des cartes selon la maquette */
-#activity-1 {
-  /* Vieux-Port : 1ere colonne */
-  grid-column: 1;
-  grid-row: 1;
-  padding: 0; /* Enlève le padding pour coller à la grille */
-}
-
-#activity-2 {
-  /*Fort de Pomègues : la 2eme colonne*/
-  grid-column: 2;
-  grid-row: 1;
-  padding: 0;
-}
-
-#activity-3 {
-    /*Parc national des Calanques : 3eme colonne*/
-    grid-column: 3;
-    grid-row: 1;
-    padding: 0;
-}
-
-#activity-4 {
-    /*Notre Dame de la Garde : 4eme colonne*/
-    grid-column: 4;
-    grid-row: 1;
-    padding: 0;
-}
-
-/*****FOOTER******/
+/* ========================================
+   FOOTER
+   ======================================== */
 
 footer {
-    padding: 40px 0 20px 0;
-    width: 100%;
+    max-width: 1440px; /* Même largeur que le conteneur principal */
+    background-color: var(--main-bg-color);    
+    padding: 40px 0;
+    margin: 40px auto 0 auto; /* top: 40px, right/left: auto, bottom: 0 */        
 }
 
-.footer-container {
-    max-width: 1440px;  /* même largeur que le contenu principal */        
-    margin: 0 auto; /* Centre le footer */
-    display:flex;
-    justify-content: space-between; /* Espace entre les colonnes */    
-    gap:40px;
-    padding: 0 20px;
-    background-color: #f2f2f2;
+.footer-container {    
+    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    padding: 0px 50px;
+    box-sizing: border-box;
 }
 
 .footer-container > div {
-    min-width: 200px; /* Largeur minimale pour les colonnes */   
+    flex: 1;
 }
 
-.footer-container h4 {    
-    margin-bottom: 10px;
-    font-size: 1.1rem; /* Taille de police pour les titres */    
+.footer-container h4 {
+    margin-bottom: 15px;
+    font-size: 1.125rem;
+    font-weight: 700;
 }
 
 .footer-container ul {
-    list-style: none; /* Enlève les puces */;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .footer-container ul li {
-    margin-bottom: 8px; /* Espace entre les éléments de la liste */
+    margin-bottom: 12px;
 }
 
+/* ========================================
+   RESPONSIVE - TABLETTE
+   ======================================== */
 
-
-
-/* Le code ci-dessous correspond à la version responsive uniquement */
-
-/****** Media queries ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+    /*container principal - sections empilées */
     .hebergements-and-populaires {
         flex-direction: column;
+        gap: 50px;
     }
 
+    /* Section hébergements à Marseille */
     .hebergements {
         width: 100%;
     }
 
-    .populaires {
-        width: 100%;
-        margin-top: 50px;
+    /* Grille des hébergements : 3 colonnes x 2 lignes */
+    .hebergement-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 30px;
     }
 
+    /* Section les plus populaires */
+    .populaires {
+        width: 100%;
+    }
+
+    /* Cartes populairzes en ligne horizontale */
     .populaires-cards {
-        display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        gap: 20px;
     }
 
     .populaires-cards a {
         width: 30%;
     }
 
+    /* Ajustement des tailles de texte */
     .populaires-cards .card-title {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .populaires-cards .card-subtitle {
-        font-size: 13px;
-    }
-}
-
-/* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
-    .hebergements-and-populaires {
-        flex-direction: column;
-    }
-    .hebergements {
-        width: 100%;
-    }
-    .populaires {
-        width: 100%;
-        margin-top: 50px;
-    }
-    .populaires-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .populaires-cards a {
-        width: 30%;
-    }
-    .populaires-cards .card-title {
-        font-size: 14px;
-    }
-    .populaires-cards .card-subtitle {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
-    /* Ajoute ici la grille activités pour tablette */
+    /* Activités en 4 colonnes sur une même ligne */
     .activites-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
     }
+
     .activites-cards-grid .card {
-        height: 340px;
+        height: 270px;
     }
+
     .activites-cards-grid .card img {
-        height: 220px;
+        height: 200px;
     }
+
     .activites-cards-grid .card-title {
-        height: 80px;
-        font-size: 0.95rem;
+        height: 70px;
+        padding: 15px;
     }
 }
 
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
 
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... */
+@media (max-width: 767px) {
+    header {
+        padding: 0 20px;
+    }
 
-     /* Ajoute ici la grille activités pour mobile */
+    .hebergements-and-populaires {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .hebergement-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .populaires-cards {
+        flex-direction: column;
+    }
+
+    .populaires-cards a {
+        width: 100%;
+    }
+
+    /* Activités en 1 colonne */
+    .activites {
+        padding: 30px 20px;
+    }
+
     .activites-cards-grid {
         grid-template-columns: 1fr;
     }
+
     .activites-cards-grid .card {
-        height: 260px;
+        height: 200px;
     }
+
     .activites-cards-grid .card img {
-        height: 140px;
+        height: 134px;
     }
+
     .activites-cards-grid .card-title {
-        height: 60px;
-        font-size: 0.9rem;
+        height: 66px;
         padding: 12px;
     }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .search-form {
+        justify-content: center;
+    }
+
+    .search-form input {
+        min-width: 150px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .filter-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .filter-buttons button {
+        justify-content: center;
+    }
 }
-
-
-
