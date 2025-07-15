@@ -649,7 +649,7 @@ footer {
         font-size: 16px;
     }
 
-     /* Formulaire de recherche - Bouton devient loupe */
+     /* Formulaire de recherche */
     .search-form {
         display: flex;       
         max-width: 100%;
@@ -711,7 +711,7 @@ footer {
         background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>') center/contain no-repeat;
     }
 
-     /* Filtres - 2x2 selon la maquette */
+     /* Filtres - 2x2 selon la maquette, réorganisation pour mobile */
     .filters {
         padding: 0 20px;
         margin-bottom: 20px; /* Réduire la marge en bas */
@@ -791,20 +791,38 @@ footer {
     }
     
     /* Réorganisation des sections principales */
-
-
-
     .hebergements-and-populaires {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column-reverse; /*Inverse l'ordre des sections */
+        gap: 30px;
         padding: 0 20px;
     }
 
-    .hebergement-cards {
-        grid-template-columns: 1fr;
+    .hebergements {
+        background-color: white !important; /* Enlève le fond gris */
+        border-radius: 0 !important; /* Enlève les arrondis */
+        width: 100vw; /* Prend toute la largeur de l'écran */
+        margin: 0 -20px !important; /* Enlève la marge externe */
+        padding: 30px 20px !important; /* Remet le padding interne */
     }
 
+    .hebergement-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .populaires {
+        border-radius: 0 !important; /* Enlève les arrondis */
+        width: 100vw; /* Prend toute la largeur de l'écran */ 
+        padding: 30px 20px !important; /* Remet le padding interne */
+        margin: 0 -20px; /* Enlève la marge externe */;
+}
+
     .populaires-cards {
+        display: flex;
         flex-direction: column;
+        gap: 20px;
     }
 
     .populaires-cards a {
@@ -813,11 +831,13 @@ footer {
 
     /* Activités en 1 colonne */
     .activites {
-        padding: 30px 20px;
+        padding: 50px 20px;
     }
 
     .activites-cards-grid {
+        display: grid;
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .activites-cards-grid .card {
@@ -826,6 +846,8 @@ footer {
 
     .activites-cards-grid .card img {
         height: 134px;
+        width: 100%;
+        object-fit: cover;
     }
 
     .activites-cards-grid .card-title {
@@ -833,32 +855,13 @@ footer {
         padding: 12px;
     }
 
+    /* Footer - réorganisation pour mobile */
+
     .footer-container {
+        display: flex;
         flex-direction: column;
         gap: 30px;
         padding: 0 20px;
     }
 
-    .search-form {
-        justify-content: center;
-    }
-
-    .search-form input {
-        min-width: 150px;
-    }
-
-    .filters {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .filter-buttons {
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-    }
-
-    .filter-buttons button {
-        justify-content: center;
-    }
 }
