@@ -22,7 +22,7 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 
 a {
@@ -332,7 +332,7 @@ header {
 .hebergements .card {
     display: flex;
     flex-direction: column;
-    height: 207px;
+    /*height: 207px;
     padding: 5px; /* Séparation spécifique aux cartes d'hébergement */
 }
 
@@ -506,7 +506,7 @@ footer {
     }
 
     /* Grille des hébergements : 3 colonnes x 2 lignes */
-    .hebergements-cards {
+    .hebergement-cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -585,6 +585,7 @@ footer {
      /* Header - Navigation mobile */
     header {
         padding: 0;
+        margin: 0;
     }
 
      .navbar {
@@ -595,11 +596,12 @@ footer {
 
      /* Logo Booki centré */
     .logo {
-        padding: 20px 0;
+        padding: 30px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
+        gap: 10px;
     }
     
     .logo img {
@@ -617,6 +619,7 @@ footer {
         position: relative;
         /* Trait gris continu en arrière-plan */
         border-bottom: 2px solid #F2F2F2;
+        gap: 15px;
     }
     
     .nav-links li {
@@ -646,13 +649,13 @@ footer {
 
      /* Section header-content */
     .header-content {
-        padding: 30px 10px 0px 15px; /* Réduire le padding bottom */
+        padding: 30px 15px 0px 15px; /* Réduire le padding bottom */
         text-align: left;
     }
     
     .header-content h1 {
         font-size: 20px;
-        margin: 0 0 8px 0;
+        margin: 10px 0 8px 0;
         line-height: 1.2;
     }
     
@@ -707,11 +710,11 @@ footer {
         background-color: #0065FC;
         border: none;
         color: white;
-        /*font-size: 0;*/
         cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: center;        
+        justify-content: center; 
+        padding: 0;       
     }
 
     .search-form .search-text {
@@ -727,14 +730,9 @@ footer {
         box-shadow: 0px 4px 4px 0px #00000040;
         border: 1px;
         border-radius: 15px;
-        padding: 15px 16px 15px 16px;
+        padding: 15px 16px;
         }
 
-    .search-form button {
-        width: 49px;
-        padding: 0;
-        justify-content: center;
-        }
 
      /* Filtres - 2x2 selon la maquette, réorganisation pour mobile */
     .filters {
@@ -750,7 +748,7 @@ footer {
 
     .filters h2 {
         font-size: 18px;
-        margin-bottom: 15px; /* Réduire la marge en bas */
+       /*margin-bottom: 15px; /* Réduire la marge en bas */
         font-weight: 700;
         text-align: left;
         margin: 0 20px 20px 5px;
@@ -764,7 +762,7 @@ footer {
     }
 
     .filter-buttons button {
-       display: flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         font-size: 14px;
@@ -795,7 +793,7 @@ footer {
         display: flex;
         align-items: center; /* Centrer verticalement l'icône avec le texte */
         gap: 10px;
-        padding: 0 10px 0 10px;
+        padding: 0 10px;
         /*margin-bottom: 0 20px;*/
         font-size: 14px;
         margin: 0 0 25px 0;;

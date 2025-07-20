@@ -12,4 +12,4 @@ Projet réalisé dans le cadre de la formation OpenClassrooms.
 
 ## Auteur
 
-zylLiz
+Lisette 
