@@ -22,7 +22,6 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    /*box-sizing: border-box;*/
 }
 
 a {
@@ -332,8 +331,6 @@ header {
 .hebergements .card {
     display: flex;
     flex-direction: column;
-    /*height: 207px;
-    padding: 5px; /* Séparation spécifique aux cartes d'hébergement */
 }
 
 .hebergements .card img {
@@ -643,7 +640,7 @@ footer {
     .nav-links li a:hover,
     .nav-links li a:active {
         border-bottom: 2px solid #0065FC;
-        border-top: none; /* Toujours pas de bordure en haut */
+        border-top: none; /*pas de bordure en haut */
         color: #0065FC;
     }
 
@@ -739,7 +736,6 @@ footer {
         display: flex;
         flex-wrap: wrap;
         padding: 0 20px 0 10px;
-        /*margin-bottom: auto; /* Réduire la marge en bas */
         gap: 0;
         align-items: center;
         
@@ -748,7 +744,6 @@ footer {
 
     .filters h2 {
         font-size: 18px;
-       /*margin-bottom: 15px; /* Réduire la marge en bas */
         font-weight: 700;
         text-align: left;
         margin: 0 20px 20px 5px;
@@ -794,7 +789,6 @@ footer {
         align-items: center; /* Centrer verticalement l'icône avec le texte */
         gap: 10px;
         padding: 0 10px;
-        /*margin-bottom: 0 20px;*/
         font-size: 14px;
         margin: 0 0 25px 0;;
     }
@@ -830,8 +824,8 @@ footer {
     }
 
     .hebergements {
-        background-color: white !important; /* Enlève le fond gris */
-        border-radius: 0 !important; /* Enlève les arrondis */
+        background-color: white !important; 
+        border-radius: 0 !important; 
         width: 100vw; /* Prend toute la largeur de l'écran */
         margin: 0 -20px !important; /* Enlève la marge externe */
         padding: 30px 20px !important; /* Remet le padding interne */
@@ -844,10 +838,10 @@ footer {
     }
 
     .populaires {
-        border-radius: 0 !important; /* Enlève les arrondis */
-        width: 100vw; /* Prend toute la largeur de l'écran */ 
-        padding: 30px 20px !important; /* Remet le padding interne */
-        margin: 0 -20px; /* Enlève la marge externe */;
+        border-radius: 0 !important; 
+        width: 100vw; 
+        padding: 30px 20px !important; 
+        margin: 0 -20px; 
 }
 
     .populaires-cards {
