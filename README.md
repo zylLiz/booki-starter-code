@@ -1,15 +1,18 @@
  HEAD
 # booki-starter-pack
 
-# Booki
+# Projet Booki
 
 Projet réalisé dans le cadre de la formation OpenClassrooms.
+Ce projet est une reproduction fidèle d'une maquette Figma en HTML et CSS.
 
-## Objectifs actuels
+Il s'agit d'un site de réservation d'hébergements et d'activités.
 
-- **Finaliser la structure HTML** afin qu’elle soit conforme à la maquette fournie.
-- **Intégrer le CSS** dans un premier temps pour la navigation (`nav`) et le header, comme demandé par mon mentor.
+## Fonctionnalités principales
+
+- Intégration responsive (desktop, tablette, mobile)
+- Respect de la charte graphique et mise en page
 
 ## Auteur
 
-Lisette 
+Lisette, développeuse web en formation.
